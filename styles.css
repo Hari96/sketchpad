@@ -1,0 +1,20 @@
+#grid {
+    width: 640px;
+    height: 640px;
+    background: blue;
+    margin: 20px auto;
+}
+.inner {
+    background: yellow;
+    float: left;
+    border: 1px black solid;
+}
+button {
+    width: 90px;
+    height: 24px;
+    border: 1px black solid;
+    border-radius: 5px;
+}
+#button {
+    text-align: center;
+}
