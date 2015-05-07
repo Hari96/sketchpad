@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    
+    var counter = true;
    $('button#set').click(function() {
      col = prompt("Choose Red(R), Green(G) or Yellow(Y)") ; 
      if(col == "R" || col == "r") {
@@ -13,19 +13,32 @@ $(document).ready(function(){
    }
      else {
       alert("Wrong colour - choose one of 3 colours");
-   }   
+   }
+   setcol = col;   
    makeGrid();
    });
     $('button#clear').click(function() {
-    $('#grid').css("background", "#222");
+    $('#grid').css("background-color", "#222");
     clearGrid();
-       
-   });
+    });
+    $(document).on('dblclick', '#grid', function() {
+        if(setcol == col) {
+          setcol = "#ccc";
+        }
+        else {
+          setcol = col;
+        }
+    });
 
+    $(document).on('mouseover', '.inner', function() {
+      
+      $(this).css("background-color", setcol);
+    
+    });
     
 function makeGrid() {
     clearGrid();
-    $('#grid').css("background", "#ccc");
+    $('#grid').css("background-color", "#ccc");
     var num = 124;
     while(num > 120) {
       var num = parseInt(prompt("Enter number of squares per side (<=120)"));
@@ -46,8 +59,5 @@ function makeGrid() {
 function clearGrid() {
     $('#grid').empty();
 }
-$(document).on('mouseover', '.inner', function() {
-        $(this).css("background", col);
-    });
     
 });

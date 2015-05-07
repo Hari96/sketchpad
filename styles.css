@@ -5,13 +5,13 @@ header {
 #grid {
     width: 640px;
     height: 640px;
-    background: #ccc;
+    background-color: #ccc;
     margin: 20px auto;
 }
 .inner {
     float: left;
-    
 }
+
 button {
     width: 90px;
     height: 24px;
